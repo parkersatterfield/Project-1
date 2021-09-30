@@ -1,0 +1,18 @@
+
+
+body {
+    background-image: linear-gradient(to left, rgb(158, 210, 228), rgb(222, 228, 228));
+}
+
+.card-custom {
+    margin: auto;
+}
+
+.custom-nav {
+    background-color: green;
+    padding-left:25px;
+}
+
+.head-custom {
+    padding: 10px;
+}
