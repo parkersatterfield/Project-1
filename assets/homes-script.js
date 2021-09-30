@@ -1,59 +1,28 @@
-// Jobs Array
-jobs = [
-    {
-        title: 'Software Developer',
-        company: 'Google',
-        salary: 70000,
-        location: 'Palo Alto, CA',
-        description: ''
-    },
-    {
-        title: 'Entry Level Software Developer',
-        company: 'Tata Consultancy Services',
-        salary: 700000,
-        location: 'New Jersey',
-        description: 'As an Entry-level Software Engineer, you will be trained to develop information systems by designing, developing, and installing software solutions to world class clients we serve. Campus hires begin their careers with TCS in the Initial Learning Program (ILP). A fully paid training program designed to provide you with the information and training necessary to succeed at TCS and excel on assignments with different customers. However, the learning does not stop there! TCS is committed to the continuous growth of its associates, in line with the core value of Learning & Sharing. We provide a Continuous Learning Program that spans technologies, domains, processes and soft skills. In addition, TCS associates are encouraged to undertake certifications and accreditations in a wide range of subject areas. With customers located across the US, TCS can offer great flexibility in work location, excellent career advancement, and a variety of opportunities. TCS mentoring, career development, and on-the-job training ensure a smooth transition into your professional life and orient you to our culture, values, vision, and mission.'
-    },
-    {
-        title: 'Software Developer',
-        company: 'SAIC',
-        salary: 80000,
-        location: 'Huntsville, AL',
-        description: ''
-    },
-    {
-        title: '',
-        company: '',
-        salary: 1,
-        location: '',
-        description: ''
-    },
-    {
-        title: '',
-        company: '',
-        salary: 1,
-        location: '',
-        description: ''
-    },
-    {
-        title: '',
-        company: '',
-        salary: 1,
-        location: '',
-        description: ''
-    },
-    {
-        title: '',
-        company: '',
-        salary: 1,
-        location: '',
-        description: ''
-    },
-]
+// Yelp API Parameters
+var business = $('.head-custom h5').text();
 
-var business = 'north-india-restaurant-san-francisco'
-var city = 'NYC'
+// From job posting
+var city = 'Los Angelas, CA'
+// var city = localStorage.getItem('location');
+
+function locationFormat(location) {
+    var city = location;
+    city = city.toLowerCase();
+    // console.log(city);
+    var cityArray = city.split(", ");
+    // console.log(cityArray);
+    var cityName = cityArray[0].split(" ");
+    var cityUrl = cityName.concat(cityArray[1]);
+    var cityUrlFormat = cityUrl.join("-");
+    console.log(cityUrlFormat);
+}
+
+locationFormat(city);
+
+// From Dropdown
 var category = 'coffee'
+// var dropdown = $('#dropDownMenu');
+// var category = dropdown.value();
 
 var url = 'https://api.yelp.com/v3/businesses/search?location='+city+'&categories='+category;
 var hostUrl = 'https://enigmatic-citadel-24557.herokuapp.com/';
@@ -67,8 +36,25 @@ fetch(hostUrl+url, {
     return response.json();
 })
 .then(function(data) {
-    console.log(data);
     var businessID = data.id;
     console.log(data);
+    for (i=0; i<10;i++) {
+        var businessName = data.businesses[i].name;
+        var businessReviews = data.businesses[i].rating;
+        $('.row div:nth-child('+i+') .businessName').text(businessName + ' ('+businessReviews+ ' ⭐)');
+        var businessImage = data.businesses[i].image_url;
+        $('.row div:nth-child('+i+') .businessImage').attr('src', businessImage);
+        var businessPrice = data.businesses[i].price;
+        $('.row div:nth-child('+i+') .businessPrice').text(businessPrice);
+        var yelpLink = data.businesses[i].url;
+        $('.row div:nth-child('+i+') a').attr('href', yelpLink);
+    }
 });
 
+favoriteBtnEl = $('.btn-primary')
+favoriteBtnEl.on('click', function (){
+    favoritesList = localStorage.getItem('favorite')
+    // push job id to favorites list array
+    favoritesList.push();
+    localStorage.setItem('favorite', favoritesList);
+});
