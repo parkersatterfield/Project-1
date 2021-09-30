@@ -1,0 +1,31 @@
+:root {
+  --white: #fff;
+  --green: #67a030;
+}
+
+header {
+  height: 80px;
+  background-color: var(--green);
+  margin-bottom: 20px;
+}
+
+header div {
+  height: 100%;
+}
+
+h1 {
+  color: var(--white);
+}
+
+h2 {
+  text-align: center;
+}
+
+.save-card {
+  margin-bottom: 15px;
+}
+
+.list-card {
+  margin: 0 10px 10px 10px;
+  width: 300px;
+}
