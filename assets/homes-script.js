@@ -1,5 +1,7 @@
 // Yelp API Parameters
 var business = $('.head-custom h5').text();
+// Jobs Array
+
 
 // From job posting
 var city = 'Los Angelas, CA'
