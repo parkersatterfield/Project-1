@@ -23,7 +23,15 @@
         <div class="container d-flex justify-content-between align-items-center">
             <h1>Reloc8</h1>
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search Job Title" aria-label="Search">
+                <label for="speed">Select a Job Title:</label>
+                <select name="jobTitle" id="jobTitle">
+                  <option value="Software Engineer">Software Engineer</option>
+                  <option value="Full Stack Developer">Full Stack Developer</option>
+                  <option value="Web Developer" selected>Web Developer</option>
+                  <option value="Software Developer">Software Developer</option>
+                  <option value="Graphic Designer">Graphic Designer</option>
+                  <option value="Entry level Developer">Entry level Developer</option>
+                </select>
                 <button class="btn btn-success" type="submit">Search</button>
             </form>
         </div>
