@@ -1,6 +1,7 @@
 //===============================================
 
 
+
 var hostUrl = "https://enigmatic-citadel-24557.herokuapp.com/";
 
 var url =
@@ -53,7 +54,8 @@ function populateCardsWithJobs(parentDivId, filteredList) {
                 <h4 class="card-title">${filteredList[i].title}</h4>
                 <h5>${filteredList[i].company}</h5>
                 <p>${filteredList[i].location}</p>
-                <a href="./homes.html" id="detail-1" class="btn btn-primary see-detail">See Detail</a>
+                <p>${filteredList[i].id}</p>
+                <a href="./homes.html" id="${filteredList[i].id}" class="btn btn-primary see-detail">See Detail</a>
             </div>
         </div>
         `;
