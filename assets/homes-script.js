@@ -622,8 +622,9 @@ $("#category").selectmenu({
 var jobTitleEl = $('.head-custom h4')
 var companyEl = $('.head-custom h5')
 var jobDescEl = $('.head-custom p')
-// create HTML element for this
 var jobLocation = $('.head-custom h6')
+var salaryEl = $('.head-custom h7')
+var locationYelpEl = $('.row h5')
 
 
 // Function to update header with job info from index page
@@ -643,6 +644,8 @@ var jobsInfo = function () {
   companyEl.text(jobs[index].company);
   jobDescEl.text(jobs[index].description);
   jobLocation.text(jobs[index].location);
+  salaryEl.text('$'+jobs[index].salary);
+  locationYelpEl.text('Places in ' + jobs[index].location);
 }
 
 jobsInfo();
