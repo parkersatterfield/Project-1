@@ -88,3 +88,5 @@ $( "#category" ).selectmenu({
         getYelp(category);
     }
 });
+
+console.log(jobs);
