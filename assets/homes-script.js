@@ -2,6 +2,13 @@
 var business = $(".head-custom h5").text();
 // Jobs Array
 
+<<<<<<< HEAD
+=======
+// From job posting
+var city = 'Los Angelas, CA'
+// var city = localStorage.getItem('location');
+
+>>>>>>> 1dfaa8db7552b596c0506a5f553896327742c751
 // From job posting
 var city = "Los Angelas, CA";
 // var city = localStorage.getItem('location');
@@ -25,6 +32,7 @@ var category = "coffee";
 // var dropdown = $('#dropDownMenu');
 // var category = dropdown.value();
 
+<<<<<<< HEAD
 var url =
   "https://api.yelp.com/v3/businesses/search?location=" +
   city +
@@ -68,6 +76,66 @@ favoriteBtnEl.on("click", function () {
   // push job id to favorites list array
   favoritesList.push();
   localStorage.setItem("favorite", favoritesList);
+=======
+var getYelp = function (category) {
+    category=window.category;
+    console.log(category);
+
+    var url = 'https://api.yelp.com/v3/businesses/search?location='+city+'&term='+category;
+    var hostUrl = 'https://enigmatic-citadel-24557.herokuapp.com/';
+
+    fetch(hostUrl+url, {
+        headers : {
+            'Authorization': 'Bearer BK_fUw1pcA-IgUqrycMskSWkpwUNoXrWWGTx9AO5IIzMTjeed_nikV7wdb_PZMGVwR7216XznMJrNwRLz3YVQDIm5QLV8Iap7wBknYLU6ahP7DaYvLmZGXob5LpUYXYx'
+        }
+    })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        var businessID = data.id;
+        console.log(data);
+        for (i=0; i<10;i++) {
+            var businessName = data.businesses[i].name;
+            var businessReviews = data.businesses[i].rating;
+            $('.row div:nth-child('+i+') .businessName').text(businessName + ' ('+businessReviews+ ' ⭐)');
+            var businessImage = data.businesses[i].image_url;
+            $('.row div:nth-child('+i+') .businessImage').attr('src', businessImage);
+            var businessPrice = data.businesses[i].price;
+            $('.row div:nth-child('+i+') .businessPrice').text(businessPrice);
+            var yelpLink = data.businesses[i].url;
+            $('.row div:nth-child('+i+') a').attr('href', yelpLink);
+        }
+    });
+    
+    favoriteBtnEl = $('.btn-primary')
+    favoriteBtnEl.on('click', function (){
+        favoritesList = localStorage.getItem('favorite')
+        // push job id to favorites list array
+        favoritesList.push();
+        localStorage.setItem('favorite', favoritesList);
+    });
+}
+
+getYelp();
+
+$(function () {
+    $('#select').select();
+});
+
+$( function() {
+    $( "#category" ).selectmenu();
+} );
+
+$( "#category" ).on( "selectmenuchange", function() {} );
+
+$( "#category" ).selectmenu({
+    change: function() {
+        var category = $('#category').val();
+        window.category = category;
+        getYelp(category);
+    }
+>>>>>>> 1dfaa8db7552b596c0506a5f553896327742c751
 });
 
 //renderCard info from local storage

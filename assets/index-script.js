@@ -595,14 +595,14 @@ function populateCardsWithJobs(parentDivId, filteredList) {
                 <h4 class="card-title">${filteredList[i].title}</h4>
                 <h5>${filteredList[i].company}</h5>
                 <p>${filteredList[i].location}</p>
-                <a href="./homes.html" id="detail-1" class="btn btn-primary see-detail">See Detail</a>
+                <a href="./homes.html" id="${filteredList[i].id}" class="btn btn-primary see-detail">See Detail</a>
             </div>
         </div>
         `;
 
     parentDiv.append(newCardDiv);
     //=========================
-    // var detailBtnEl = $(".see-detail");
+    //var detailBtnEl = $("#{filteredList[i].id}");
     // detailBtnEl.each(function () {
     //   $(this).on("click", function () {
     //     //event.preventDefault();
@@ -663,5 +663,3 @@ detailBtnEl.on("click", function (event) {
   };
   localStorage.setItem("jobCard", JSON.stringify(jobInfo));
 });
-
-// move to homes-script.js to get the local storage info and display on the upper side card
