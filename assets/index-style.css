@@ -1,6 +1,8 @@
 :root {
   --white: #fff;
-  --green: #67a030;
+  --green: #77a464;
+  --wc-blue: #2ea2cc;
+  --navy: #205072;
 }
 
 header {
@@ -21,11 +23,17 @@ h2 {
   text-align: center;
 }
 
+body {
+background-color:var(--navy);
+}
+
 .save-card {
   margin-bottom: 15px;
+  background-color: #2ea2cc;
 }
 
 .list-card {
   margin: 0 10px 10px 10px;
   width: 300px;
+  background-color: #2ea2cc;
 }
