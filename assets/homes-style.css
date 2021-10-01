@@ -1,11 +1,11 @@
 
 
 body {
-    background-image: linear-gradient(to left, rgb(158, 210, 228), rgb(222, 228, 228));
+    /* background-image: linear-gradient(to left, rgb(158, 210, 228), rgb(222, 228, 228)); */
 }
 
 .card-custom {
-    margin: auto;
+    margin: 10px;
 }
 
 .custom-nav {
@@ -15,4 +15,23 @@ body {
 
 .head-custom {
     padding: 10px;
+    border-style: solid;
+    background-color: rgb(230, 255, 223);
+}
+
+.businessImage {
+    height: 150px;
+    max-width: 250px;
+}
+
+.container-custom {
+    width: 90%;
+}
+
+.row-custom {
+    justify-content: center;
+}
+
+h5 {
+    width: fit-content;
 }

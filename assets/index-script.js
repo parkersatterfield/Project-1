@@ -575,8 +575,18 @@ fetch(hostUrl + newUrl + id, {
     console.log(data);
   });
 
-// click job list card, local storage card information
-var detailBtnEl = $("#detail-1");
-detailBtnEl.on("click", storageJobInfo);
-function storageJobInfo() {}
+//add event listener to a button, when click the button, it will go to the home page and card job info will stored in local storage
+
+// var detailBtnEl = $("#detail-1");
+// detailBtnEl.on("click", function (event) {
+//   //event.preventDefault();
+//   console.log(event);
+//   var jobInfo = {
+//     jobTitle: $(this).siblings("h5").text(),
+//     companyName: $(this).siblings("h6").text(),
+//     jobLocation: $(this).siblings("p").text(),
+//   };
+//   localStorage.setItem("jobCard", JSON.stringify(jobInfo));
+// });
+
 // move to homes-script.js to get the local storage info and display on the upper side card
