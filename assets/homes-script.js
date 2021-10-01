@@ -1,5 +1,4 @@
 // Yelp API Parameters
-<<<<<<< HEAD
 var business = $('.head-custom h5').text();
 
 // From job posting
@@ -16,45 +15,16 @@ function locationFormat(location) {
     var cityUrl = cityName.concat(cityArray[1]);
     var cityUrlFormat = cityUrl.join("-");
     // console.log(cityUrlFormat);
-=======
-var business = $(".head-custom h5").text();
-// Jobs Array
-
-// From job posting
-var city = "Los Angelas, CA";
-// var city = localStorage.getItem('location');
-
-function locationFormat(location) {
-  var city = location;
-  city = city.toLowerCase();
-  // console.log(city);
-  var cityArray = city.split(", ");
-  // console.log(cityArray);
-  var cityName = cityArray[0].split(" ");
-  var cityUrl = cityName.concat(cityArray[1]);
-  var cityUrlFormat = cityUrl.join("-");
-  console.log(cityUrlFormat);
->>>>>>> 2b1da67a9ec4350b75687f768925631ce3d588f0
 }
 
 locationFormat(city);
 
 // From Dropdown
-<<<<<<< HEAD
 var category = 'coffee'
 
 var getYelp = function (category) {
     category=window.category;
     // console.log(category);
-=======
-var category = "coffee";
-// var dropdown = $('#dropDownMenu');
-// var category = dropdown.value();
-
-var getYelp = function (category) {
-  category = window.category;
-  console.log(category);
->>>>>>> 2b1da67a9ec4350b75687f768925631ce3d588f0
 
   var url =
     "https://api.yelp.com/v3/businesses/search?location=" +
