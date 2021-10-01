@@ -1,221 +1,223 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Homes</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Font Awesome -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- Materialize CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <!-- jQuery UI CSS -->
-        <link rel="stylesheet" href=" https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <!-- Style Sheet -->
-        <link rel="stylesheet" href="./assets/homes-style.css">
-    </head>
-    <body>
-        <nav>
-            <div class="nav-wrapper custom-nav">
-              <a href="./index.html" class="brand-logo">Reloc8</a>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Homes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href=" https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="./assets/homes-style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper custom-nav">
+            <a href="./index.html" class="brand-logo">Reloc8</a>
+        </div>
+    </nav>
+
+    <section class='container container-custom'>
+        <header class='card'>
+            <div class='head-custom'>
+                <h4>Job Title</h4>
+                <h5>Company</h5>
+                <p>Job Description</p>
+                <button class='btn btn-primary'>Add to Favorite</button>
             </div>
-        </nav>
+        </header>
 
-        <section class = 'container container-custom'>
-            <header class = 'card'>
-                <div class = 'head-custom'>
-                    <h4>Job Title</h4>
-                    <h5>Company</h5>
-                    <p>Job Description</p>
-                    <button class = 'btn btn-primary'>Add to Favorite</button>
-                </div>
-            </header>
+        <div class="row row-custom">
+            <div class='row'>
+                <h5 class='col'>What's in the Area?</h5>
+                <select name="category" id="category" class='col'>
+                    <!-- these options need to be updated to fit the yelp API supported categories -->
+                    <option id='opt'>Ice Cream</option>
+                    <option>Casinos</option>
+                    <option selected="selected">Coffee</option>
+                    <option>Grocery</option>
+                </select>
+            </div>
 
-            <div class="row row-custom">
-                <div class = 'row'>
-                    <h5 class = 'col'>What's in the Area?</h5>
-                    <select name="category" id="category" class = 'col'>
-                        <!-- these options need to be updated to fit the yelp API supported categories -->
-                        <option id = 'opt'>Ice Cream</option>
-                        <option>Casinos</option>
-                        <option selected="selected">Coffee</option>
-                        <option>Grocery</option>
-                    </select>    
-                </div>
-                
-                <div class="card card-custom vertical col l3 m5 s12">
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
-                            <div class="card-image">
-                                <img src="" class = businessImage>
-                              </div>
-                            <h6 class = 'businessName'>Business Name</h6>
-                            <h7 class = 'businessPrice'>$$</h7>
+            <div class="card card-custom vertical col l3 m5 s12">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
+                        <div class="card-image">
+                            <img src="" class=businessImage>
                         </div>
-                        <div class="card-action">
-                            <a href="#">View In Yelp</a>
-                        </div>
+                        <h6 class='businessName'>Business Name</h6>
+                        <h7 class='businessPrice'>$$</h7>
                     </div>
-                </div>
-
-                <div class="card card-custom vertical col l3 m5 s12">
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
-                            <div class="card-image">
-                                <img src="" class = businessImage>
-                              </div>
-                            <h6 class = 'businessName'>Business Name</h6>
-                            <h7 class = 'businessPrice'>$$</h7>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">View In Yelp</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card card-custom vertical col l3 m5 s12">
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
-                            <div class="card-image">
-                                <img src="" class = businessImage>
-                              </div>
-                            <h6 class = 'businessName'>Business Name</h6>
-                            <h7 class = 'businessPrice'>$$</h7>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">View In Yelp</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card card-custom vertical col l3 m5 s12">
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
-                            <div class="card-image">
-                                <img src="" class = businessImage>
-                              </div>
-                            <h6 class = 'businessName'>Business Name</h6>
-                            <h7 class = 'businessPrice'>$$</h7>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">View In Yelp</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card card-custom vertical col l3 m5 s12">
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
-                            <div class="card-image">
-                                <img src="" class = businessImage>
-                              </div>
-                            <h6 class = 'businessName'>Business Name</h6>
-                            <h7 class = 'businessPrice'>$$</h7>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">View In Yelp</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card card-custom vertical col l3 m5 s12">
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
-                            <div class="card-image">
-                                <img src="" class = businessImage>
-                              </div>
-                            <h6 class = 'businessName'>Business Name</h6>
-                            <h7 class = 'businessPrice'>$$</h7>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">View In Yelp</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card card-custom vertical col l3 m5 s12">
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
-                            <div class="card-image">
-                                <img src="" class = businessImage>
-                              </div>
-                            <h6 class = 'businessName'>Business Name</h6>
-                            <h7 class = 'businessPrice'>$$</h7>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">View In Yelp</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card card-custom vertical col l3 m5 s12">
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
-                            <div class="card-image">
-                                <img src="" class = businessImage>
-                              </div>
-                            <h6 class = 'businessName'>Business Name</h6>
-                            <h7 class = 'businessPrice'>$$</h7>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">View In Yelp</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card card-custom vertical col l3 m5 s12">
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
-                            <div class="card-image">
-                                <img src="" class = businessImage>
-                              </div>
-                            <h6 class = 'businessName'>Business Name</h6>
-                            <h7 class = 'businessPrice'>$$</h7>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">View In Yelp</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card card-custom vertical col l3 m5 s12">
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
-                            <div class="card-image">
-                                <img src="" class = businessImage>
-                              </div>
-                            <h6 class = 'businessName'>Business Name</h6>
-                            <h7 class = 'businessPrice'>$$</h7>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">View In Yelp</a>
-                        </div>
+                    <div class="card-action">
+                        <a href="#">View In Yelp</a>
                     </div>
                 </div>
             </div>
-        </section>
-    </body>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- jQuery UI -->
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <!-- jobs-script.js -->
-    <script src="./assets/jobs-script.js" async defer></script>
-    <!-- Homes-Script.js -->
-    <script src="./assets/homes-script.js" async defer></script>
+            <div class="card card-custom vertical col l3 m5 s12">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
+                        <div class="card-image">
+                            <img src="" class=businessImage>
+                        </div>
+                        <h6 class='businessName'>Business Name</h6>
+                        <h7 class='businessPrice'>$$</h7>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">View In Yelp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-custom vertical col l3 m5 s12">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
+                        <div class="card-image">
+                            <img src="" class=businessImage>
+                        </div>
+                        <h6 class='businessName'>Business Name</h6>
+                        <h7 class='businessPrice'>$$</h7>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">View In Yelp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-custom vertical col l3 m5 s12">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
+                        <div class="card-image">
+                            <img src="" class=businessImage>
+                        </div>
+                        <h6 class='businessName'>Business Name</h6>
+                        <h7 class='businessPrice'>$$</h7>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">View In Yelp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-custom vertical col l3 m5 s12">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
+                        <div class="card-image">
+                            <img src="" class=businessImage>
+                        </div>
+                        <h6 class='businessName'>Business Name</h6>
+                        <h7 class='businessPrice'>$$</h7>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">View In Yelp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-custom vertical col l3 m5 s12">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
+                        <div class="card-image">
+                            <img src="" class=businessImage>
+                        </div>
+                        <h6 class='businessName'>Business Name</h6>
+                        <h7 class='businessPrice'>$$</h7>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">View In Yelp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-custom vertical col l3 m5 s12">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
+                        <div class="card-image">
+                            <img src="" class=businessImage>
+                        </div>
+                        <h6 class='businessName'>Business Name</h6>
+                        <h7 class='businessPrice'>$$</h7>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">View In Yelp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-custom vertical col l3 m5 s12">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
+                        <div class="card-image">
+                            <img src="" class=businessImage>
+                        </div>
+                        <h6 class='businessName'>Business Name</h6>
+                        <h7 class='businessPrice'>$$</h7>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">View In Yelp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-custom vertical col l3 m5 s12">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
+                        <div class="card-image">
+                            <img src="" class=businessImage>
+                        </div>
+                        <h6 class='businessName'>Business Name</h6>
+                        <h7 class='businessPrice'>$$</h7>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">View In Yelp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-custom vertical col l3 m5 s12">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <!-- <img class = 'businessImage' src="" alt="Business Image"> -->
+                        <div class="card-image">
+                            <img src="" class=businessImage>
+                        </div>
+                        <h6 class='businessName'>Business Name</h6>
+                        <h7 class='businessPrice'>$$</h7>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">View In Yelp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- jQuery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<!-- jobs-script.js -->
+<script src="./assets/jobs-script.js" async defer></script>
+<!-- Homes-Script.js -->
+<script src="./assets/homes-script.js" async defer></script>
 
 </html>
