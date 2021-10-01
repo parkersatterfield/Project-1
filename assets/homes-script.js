@@ -1,10 +1,5 @@
 // Yelp API Parameters
 var business = $('.head-custom h5').text();
-// Jobs Array
-
-// From job posting
-var city = 'Los Angelas, CA'
-// var city = localStorage.getItem('location');
 
 // From job posting
 var city = 'Los Angelas, CA'
@@ -19,7 +14,7 @@ function locationFormat(location) {
     var cityName = cityArray[0].split(" ");
     var cityUrl = cityName.concat(cityArray[1]);
     var cityUrlFormat = cityUrl.join("-");
-    console.log(cityUrlFormat);
+    // console.log(cityUrlFormat);
 }
 
 locationFormat(city);
@@ -29,7 +24,7 @@ var category = 'coffee'
 
 var getYelp = function (category) {
     category=window.category;
-    console.log(category);
+    // console.log(category);
 
     var url = 'https://api.yelp.com/v3/businesses/search?location='+city+'&term='+category;
     var hostUrl = 'https://enigmatic-citadel-24557.herokuapp.com/';
@@ -80,19 +75,33 @@ $( "#category" ).selectmenu({
     }
 });
 
+
+// Set HTML Elements as variables
+var jobTitleEl = $('.head-custom h4')
+var companyEl = $('.head-custom h5')
+var jobDescEl = $('.head-custom p')
+// create HTML element for this
+var jobLocation = $('.head-custom h6')
+
+
 // Function to update header with job info from index page
 var jobsInfo = function () {
-    console.log(jobs);
-    
-
+    // var jobID = localStorage.getItem('id');
+    var jobID = 42;
+    jobTitleEl.text(jobs[jobID].title);
+    companyEl.text(jobs[jobID].company);
+    jobDescEl.text(jobs[jobID].description);
+    jobLocation.text(jobs[jobID].location);
 }
 
 jobsInfo();
 
 // Save job to favorites
 favoriteBtnEl = $('.btn-primary')
+
 favoriteBtnEl.on('click', function (){
-favoritesList = localStorage.getItem('favorite')
-// push job id to favorites list array
-favoritesList.push();
-localStorage.setItem('favorite', favoritesList); 
+    favoritesList = localStorage.getItem('favorite')
+    // push job id to favorites list array
+    favoritesList.push();
+    localStorage.setItem('favorite', favoritesList)
+});
