@@ -26,8 +26,6 @@ locationFormat(city);
 
 // From Dropdown
 var category = 'coffee'
-// var dropdown = $('#dropDownMenu');
-// var category = dropdown.value();
 
 var getYelp = function (category) {
     category=window.category;
@@ -59,18 +57,11 @@ var getYelp = function (category) {
             $('.row div:nth-child('+i+') a').attr('href', yelpLink);
         }
     });
-    
-    favoriteBtnEl = $('.btn-primary')
-    favoriteBtnEl.on('click', function (){
-        favoritesList = localStorage.getItem('favorite')
-        // push job id to favorites list array
-        favoritesList.push();
-        localStorage.setItem('favorite', favoritesList);
-    });
 }
 
 getYelp();
 
+// Functions and Event Listeners for Yelp Categories Dropdown
 $(function () {
     $('#select').select();
 });
@@ -89,4 +80,19 @@ $( "#category" ).selectmenu({
     }
 });
 
-console.log(jobs);
+// Function to update header with job info from index page
+var jobsInfo = function () {
+    console.log(jobs);
+    
+
+}
+
+jobsInfo();
+
+// Save job to favorites
+favoriteBtnEl = $('.btn-primary')
+favoriteBtnEl.on('click', function (){
+favoritesList = localStorage.getItem('favorite')
+// push job id to favorites list array
+favoritesList.push();
+localStorage.setItem('favorite', favoritesList); 
