@@ -516,3 +516,59 @@ fetch(hostUrl+newUrl+id, {
     console.log(data);
 });
 
+///=============================================================================
+/// populating cards
+
+function populateCardsWithJobs(parentDivId, filteredList) {
+
+    var parentDiv = document.getElementById(parentDivId);
+
+
+    for (let i =0; i < filteredList.length ; i++){
+
+        var newCardDiv = document.createElement('div');
+    
+        newCardDiv.innerHTML = `
+        <div class="card list-card">
+            <div class="card-body">
+                <h4 class="card-title">${filteredList[i].title}</h4>
+                <h5>${filteredList[i].company}</h5>
+                <p>${filteredList[i].location}</p>
+                <a href="./homes.html" id="detail-1" class="btn btn-primary see-detail">See Detail</a>
+            </div>
+        </div>
+        `
+    
+        parentDiv.append(newCardDiv);
+    }
+}
+
+
+///=============================================================================
+/// searching jobs array
+
+function searchArrayByTitle(arr, searchTerm) {
+    
+    var filteredArray = [];
+
+    filteredArray = arr.filter(el => el.title == searchTerm )
+
+    return filteredArray;
+}
+///=============================================================================
+// handle dropdown menu
+
+function handleDropdown(e) {
+    e.preventDefault();
+    var dropdownEl = document.getElementById('jobTitle');
+    var filterResult = searchArrayByTitle(jobs, dropdownEl.value);
+    populateCardsWithJobs("job-list-cards", filterResult);
+}
+
+
+///=============================================================================
+// function calls
+var filterResult = searchArrayByTitle(jobs,'Web Developer');
+populateCardsWithJobs("job-list-cards", filterResult);
+
+document.getElementById('dropDownMenu').addEventListener('submit',(event) => handleDropdown(event));
