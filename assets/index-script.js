@@ -191,7 +191,7 @@ var jobs = [
       "This position is responsible for developing and maintaining websites and mapping-applications for visualizing and distributing geospatial data. The candidate is expected to have a technical background in developing web applications. The candidate will support a diverse array of technologies including, but not limited to: PHP, Python, HTML, CSS, JavaScript, and XML. Knowledge of Geographic mapping technologies such as ArcGIS Server, GeoServer, KML and Open Geospatial Consortium (OGC) specifications are desired. The candidate will be interacting with a skilled web development team that supports the USGS EROS Science Branch.",
   },
   {
-    id: 022,
+    id:22,
     title: "Web Developer",
     company: "Pearson",
     salary: 82000,
@@ -595,7 +595,8 @@ function populateCardsWithJobs(parentDivId, filteredList) {
                 <h4 class="card-title">${filteredList[i].title}</h4>
                 <h5>${filteredList[i].company}</h5>
                 <p>${filteredList[i].location}</p>
-                <a href="./homes.html" id="detail-1" class="btn btn-primary see-detail">See Detail</a>
+                <p>${filteredList[i].id}</p>
+                <a href="./homes.html" id="${filteredList[i].id}" class="btn btn-primary see-detail">See Detail</a>
             </div>
         </div>
         `;
