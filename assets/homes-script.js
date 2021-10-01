@@ -95,4 +95,4 @@ $("#category").selectmenu({
   },
 });
 
-//console.log(jobs);
+
