@@ -1,4 +1,22 @@
 // Yelp API Parameters
+<<<<<<< HEAD
+var business = $('.head-custom h5').text();
+
+// From job posting
+var city = 'Los Angelas, CA'
+// var city = localStorage.getItem('location');
+
+function locationFormat(location) {
+    var city = location;
+    city = city.toLowerCase();
+    // console.log(city);
+    var cityArray = city.split(", ");
+    // console.log(cityArray);
+    var cityName = cityArray[0].split(" ");
+    var cityUrl = cityName.concat(cityArray[1]);
+    var cityUrlFormat = cityUrl.join("-");
+    // console.log(cityUrlFormat);
+=======
 var business = $(".head-custom h5").text();
 // Jobs Array
 
@@ -16,11 +34,19 @@ function locationFormat(location) {
   var cityUrl = cityName.concat(cityArray[1]);
   var cityUrlFormat = cityUrl.join("-");
   console.log(cityUrlFormat);
+>>>>>>> 2b1da67a9ec4350b75687f768925631ce3d588f0
 }
 
 locationFormat(city);
 
 // From Dropdown
+<<<<<<< HEAD
+var category = 'coffee'
+
+var getYelp = function (category) {
+    category=window.category;
+    // console.log(category);
+=======
 var category = "coffee";
 // var dropdown = $('#dropDownMenu');
 // var category = dropdown.value();
@@ -28,6 +54,7 @@ var category = "coffee";
 var getYelp = function (category) {
   category = window.category;
   console.log(category);
+>>>>>>> 2b1da67a9ec4350b75687f768925631ce3d588f0
 
   var url =
     "https://api.yelp.com/v3/businesses/search?location=" +
@@ -77,6 +104,7 @@ var getYelp = function (category) {
 
 getYelp();
 
+// Functions and Event Listeners for Yelp Categories Dropdown
 $(function () {
   $("#select").select();
 });
@@ -96,3 +124,32 @@ $("#category").selectmenu({
 });
 
 
+// Set HTML Elements as variables
+var jobTitleEl = $('.head-custom h4')
+var companyEl = $('.head-custom h5')
+var jobDescEl = $('.head-custom p')
+// create HTML element for this
+var jobLocation = $('.head-custom h6')
+
+
+// Function to update header with job info from index page
+var jobsInfo = function () {
+    // var jobID = localStorage.getItem('id');
+    var jobID = 42;
+    jobTitleEl.text(jobs[jobID].title);
+    companyEl.text(jobs[jobID].company);
+    jobDescEl.text(jobs[jobID].description);
+    jobLocation.text(jobs[jobID].location);
+}
+
+jobsInfo();
+
+// Save job to favorites
+favoriteBtnEl = $('.btn-primary')
+
+favoriteBtnEl.on('click', function (){
+    favoritesList = localStorage.getItem('favorite')
+    // push job id to favorites list array
+    favoritesList.push();
+    localStorage.setItem('favorite', favoritesList)
+});
