@@ -103,7 +103,7 @@ var jobs = [
   },
   {
     id: 012,
-    title: "Entry Level Developer",
+    title: "Entry Level Developer", 
     company: "Oracle",
     salary: 430000,
     location: "United, States",
@@ -583,7 +583,7 @@ fetch(hostUrl + newUrl + id, {
 
 function populateCardsWithJobs(parentDivId, filteredList) {
   var parentDiv = document.getElementById(parentDivId);
-  
+
   parentDiv.innerHTML = '';
 
   for (let i = 0; i < filteredList.length; i++) {
