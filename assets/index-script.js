@@ -1,41 +1,3 @@
-//===============================================
-
-
-
-var hostUrl = "https://enigmatic-citadel-24557.herokuapp.com/";
-
-var url =
-  "https://api.yelp.com/v3/businesses/search?location=NYC&categories=coffee";
-//fetch(hostUrl + YOUR_URL + parameters)
-
-fetch(hostUrl + url, {
-  headers: {
-    Authorization:
-      "Bearer BK_fUw1pcA-IgUqrycMskSWkpwUNoXrWWGTx9AO5IIzMTjeed_nikV7wdb_PZMGVwR7216XznMJrNwRLz3YVQDIm5QLV8Iap7wBknYLU6ahP7DaYvLmZGXob5LpUYXYx",
-  },
-})
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
-
-var id = "gR9DTbKCvezQlqvD7_FzPw";
-var newUrl = "https://api.yelp.com/v3/businesses/";
-
-fetch(hostUrl + newUrl + id, {
-  headers: {
-    Authorization:
-      "Bearer BK_fUw1pcA-IgUqrycMskSWkpwUNoXrWWGTx9AO5IIzMTjeed_nikV7wdb_PZMGVwR7216XznMJrNwRLz3YVQDIm5QLV8Iap7wBknYLU6ahP7DaYvLmZGXob5LpUYXYx",
-  },
-})
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
 
 ///=============================================================================
 /// populating cards in main section of home page
@@ -43,7 +5,7 @@ fetch(hostUrl + newUrl + id, {
 function populateCardsWithJobs(parentDivId, filteredList) {
   var parentDiv = document.getElementById(parentDivId);
 
-  parentDiv.innerHTML = '';
+  parentDiv.innerHTML = "";
 
   for (let i = 0; i < filteredList.length; i++) {
     var newCardDiv = document.createElement("div");
@@ -59,8 +21,17 @@ function populateCardsWithJobs(parentDivId, filteredList) {
             </div>
         </div>
         `;
-
     parentDiv.append(newCardDiv);
+    //=========================
+    // local storage job id
+    var detailBtnEl = $(".see-detail");
+    detailBtnEl.each(function () {
+      $(this).on("click", function () {
+        var companyID = Number($(this).attr("id"));
+        //console.log(companyID);
+        localStorage.setItem("id", companyID);
+      });
+    });
   }
 }
 
@@ -92,3 +63,18 @@ populateCardsWithJobs("job-list-cards", filterResult);
 document
   .getElementById("dropDownMenu")
   .addEventListener("submit", (event) => handleDropdown(event));
+
+//===============================================================================
+//add event listener to a button, when click the button, it will go to the home page and card job info will stored in local storage
+
+var detailBtnEl = $("#detail-1");
+detailBtnEl.on("click", function (event) {
+  //event.preventDefault();
+  console.log(event);
+  var jobInfo = {
+    jobTitle: $(this).siblings("h5").text(),
+    companyName: $(this).siblings("h6").text(),
+    jobLocation: $(this).siblings("p").text(),
+  };
+  localStorage.setItem("jobCard", JSON.stringify(jobInfo));
+});
