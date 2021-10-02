@@ -605,3 +605,58 @@ document
   .addEventListener("submit", (event) => handleDropdown(event));
 
 //===============================================================================
+//retrieve favoritesList data and populate to favorite area
+function retrievedFavorite() {
+  // because first element is empty, so not using JSON.parse
+  var favoriteCompanyID = localStorage.getItem("favoriteList");
+  // console.log(favoriteCompanyID);
+  // console.log(typeof favoriteCompanyID);
+  // favoriteCompanyID is a string, so convert it to array and remove the first empty value
+  var favoriteCompanyList = favoriteCompanyID.split(",");
+  favoriteCompanyList.shift();
+  console.log(favoriteCompanyList);
+
+  var favoriteDiv = $(".favorite-div");
+  for (var i = 0; i < favoriteCompanyList.length; i++) {
+    for (var j = 0; j < jobs.length; j++) {
+      if (favoriteCompanyList[i] == jobs[j].id) {
+        var favoriteCard = $("<div>").addClass("card save-card");
+        var favoriteBody = $("<div>").addClass("card-body");
+        var companyTitle = $("<h5>").addClass("card-title");
+        companyTitle.text(jobs[j].company + " ⭐️");
+        var companyAddress = $("<p>").addClass("card-text");
+        companyAddress.text(jobs[j].location);
+        var linkDetail = $("<a>")
+          .attr("href", "./homes.html")
+          .addClass("btn btn-primary");
+        linkDetail.text("Detail-Link");
+        // append each element together
+        favoriteCard.append(favoriteBody);
+        favoriteBody.append(companyTitle, companyAddress, linkDetail);
+        //append each card to the favorite div
+        favoriteDiv.append(favoriteCard);
+      }
+    }
+  }
+
+  // for (var i = 0; i < jobs.length; i++) {
+  //   if (favoriteCompanyID == jobs[i].id) {
+  //     var favoriteCard = $("<div>").addClass("card save-card");
+  //     var favoriteBody = $("<div>").addClass("card-body");
+  //     var companyTitle = $("<h5>").addClass("card-title");
+  //     companyTitle.text(jobs[i].company + " ⭐️");
+  //     var companyAddress = $("<p>").addClass("card-text");
+  //     companyAddress.text(jobs[i].location);
+  //     var linkDetail = $("<a>")
+  //       .attr("href", "./homes.html")
+  //       .addClass("btn btn-primary");
+  //     linkDetail.text("Detail-Link");
+  //     // append each element together
+  //     favoriteCard.append(favoriteBody);
+  //     favoriteBody.append(companyTitle, companyAddress, linkDetail);
+  //     //append each card to the favorite div
+  //     favoriteDiv.append(favoriteCard);
+  //   }
+  // }
+}
+retrievedFavorite();
