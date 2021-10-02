@@ -542,15 +542,15 @@ var jobs = [
 ];
 
 // Yelp API Parameters
-var business = $('.head-custom h5').text();
+var business = $(".head-custom h5").text();
 
 // Initialize app with coffee as category
-var category = 'coffee'
+var category = "coffee";
 
 var getYelp = function (category, city) {
-    category=window.category;
-    city=window.city;
-    // console.log(category);
+  category = window.category;
+  city = window.city;
+  // console.log(category);
 
   var url =
     "https://api.yelp.com/v3/businesses/search?location=" +
@@ -588,14 +588,6 @@ var getYelp = function (category, city) {
         $(".row div:nth-child(" + i + ") a").attr("href", yelpLink);
       }
     });
-
-  favoriteBtnEl = $(".btn-primary");
-  favoriteBtnEl.on("click", function () {
-    favoritesList = localStorage.getItem("favorite");
-    // push job id to favorites list array
-    favoritesList.push();
-    localStorage.setItem("favorite", favoritesList);
-  });
 };
 
 // Functions and Event Listeners for Yelp Categories Dropdown
@@ -617,49 +609,60 @@ $("#category").selectmenu({
   },
 });
 
-
 // Set HTML Elements as variables
-var jobTitleEl = $('.head-custom h4')
-var companyEl = $('.head-custom h5')
-var jobDescEl = $('.head-custom p')
-var jobLocation = $('.head-custom h6')
-var salaryEl = $('.head-custom h7')
-var locationYelpEl = $('.row h5')
-
+var jobTitleEl = $(".head-custom h4");
+var companyEl = $(".head-custom h5");
+var jobDescEl = $(".head-custom p");
+var jobLocation = $(".head-custom h6");
+var salaryEl = $(".head-custom h7");
+var locationYelpEl = $(".row h5");
 
 // Function to update header with job info from index page
 var jobsInfo = function () {
-  var jobID = localStorage.getItem('id');
+  var jobID = localStorage.getItem("id");
 
-  for (i=0;i<jobs.length;i++) {
+  for (i = 0; i < jobs.length; i++) {
     if (jobs[i].id == jobID) {
       var index = i;
     }
   }
 
   var city = jobs[index].location;
-  window.city=city;
+  window.city = city;
   console.log(city);
   jobTitleEl.text(jobs[index].title);
   companyEl.text(jobs[index].company);
   jobDescEl.text(jobs[index].description);
   jobLocation.text(jobs[index].location);
-  salaryEl.text('$'+jobs[index].salary);
-  locationYelpEl.text('Places in ' + jobs[index].location);
-}
+  salaryEl.text("$" + jobs[index].salary);
+  locationYelpEl.text("Places in " + jobs[index].location);
+};
 
 jobsInfo();
 
+//=====================================
+// Each time click add-to-favorite btn,
+//Save job id to favoritesList local storage
 // Save job to favorites
-favoriteBtnEl = $('.btn-primary')
 
-favoriteBtnEl.on('click', function (){
-    favoritesList = localStorage.getItem('favorite')
-    // push job id to favorites list array
-    favoritesList.push();
-    localStorage.setItem('favorite', favoritesList)
-});
+function addToFavorite() {
+  var favoriteBtnEl = $(".btn-primary");
+  favoriteBtnEl.on("click", function () {
+    // get data from local storage id key
+    var favoritesID = localStorage.getItem("id");
+    // if there is nothing saved at the start then save on empty array
+    if (localStorage.getItem("favoriteList") == 0) {
+      localStorage.setItem("favoriteList", "[]");
+    }
+    var oldData = [];
+    oldData.push(localStorage.getItem("favoriteList"));
+    oldData.push(favoritesID);
+    localStorage.setItem("favoriteList", oldData);
+  });
+}
+addToFavorite();
 
+//=========================================
 function locationFormat(location) {
   var city = location;
   city = city.toLowerCase();
@@ -672,6 +675,6 @@ function locationFormat(location) {
   // console.log(cityUrlFormat);
 }
 
-// Run functions 
+// Run functions
 locationFormat(city);
 getYelp(city, category);

@@ -29,3 +29,8 @@ h2 {
   margin: 0 10px 10px 10px;
   width: 300px;
 }
+
+.favorite-div {
+  display: flex;
+  flex-direction: column;
+}
