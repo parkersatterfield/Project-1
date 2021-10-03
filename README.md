@@ -30,8 +30,7 @@ Group Members :
 - Justin Odom
 - Ludude Lubin
 - Parker Satterfield
-## Presentation
-Below is our presentation
+## Presentation Link
 
 [Project Presentation](https://docs.google.com/presentation/d/1QzzNPKGhX9DbBj2tTMR1yCrg8xYZctgxi7dPpZq3Shg/edit?usp=sharing)
 
