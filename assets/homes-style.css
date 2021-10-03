@@ -1,24 +1,21 @@
-
-
-
 .card-custom {
     margin: 10px;
 }
 
 .custom-nav {
-    background-color: green;
+    background-color: #67a030;
     padding-left:25px;
 }
 
 .head-custom {
     padding: 10px;
-    border-style: solid;
-    background-color: rgb(230, 255, 223);
+    border-bottom: solid #67a030;
 }
 
 .businessImage {
-    height: 150px;
-    max-width: 250px;
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
 }
 
 .card .card-content {
@@ -35,4 +32,8 @@
 
 h5 {
     width: fit-content;
+}
+
+.icon-custom {
+    background-color:#67a030
 }
