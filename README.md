@@ -12,7 +12,9 @@ The code and all relevant files can be found at [https://github.com/parkersatter
 ## Usage
 
 
+
 ![screenshot-demo](./assets/images/Index.gif "Functional Demo")
+
 
 
 ## Features
