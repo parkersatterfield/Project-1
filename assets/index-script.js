@@ -129,7 +129,7 @@ var jobs = [
     id: 015,
     title: "Web Developer",
     company: "University of Kentucky",
-    salary: 25,
+    salary: 25000,
     location: "University, KY",
     description:
       "Work with the University Of Kentucky web team to extend the university’s web component library to meet the needs of our growing base of internal web platform subscribers. You’ll build html components using CSS and javascript, and adapt them for use in our Drupal CMS distribution. Additionally, you will have the opportunity to provide input on the web platform architecture and overall technical roadmap, with a focus on frontend interface components.",
@@ -564,14 +564,7 @@ function populateCardsWithJobs(parentDivId, filteredList) {
     parentDiv.append(newCardDiv);
     //=========================
     // local storage job id
-    var detailBtnEl = $(".see-detail");
-    detailBtnEl.each(function () {
-      $(this).on("click", function () {
-        var companyID = Number($(this).attr("id"));
-        //console.log(companyID);
-        localStorage.setItem("id", companyID);
-      });
-    });
+    saveIDlocally();
   }
 }
 
@@ -620,7 +613,9 @@ function retrievedFavorite() {
   for (var i = 0; i < favoriteCompanyList.length; i++) {
     for (var j = 0; j < jobs.length; j++) {
       if (favoriteCompanyList[i] == jobs[j].id) {
-        var favoriteCard = $("<div>").addClass("card save-card");
+        var favoriteCard = $("<div>").addClass(
+          "card save-card favorite-company"
+        );
         var favoriteBody = $("<div>").addClass("card-body");
         var companyTitle = $("<h5>").addClass("card-title");
         companyTitle.text(jobs[j].company + " ⭐️");
@@ -628,35 +623,32 @@ function retrievedFavorite() {
         companyAddress.text(jobs[j].location);
         var linkDetail = $("<a>")
           .attr("href", "./homes.html")
-          .addClass("btn btn-primary");
+          .addClass("btn btn-primary see-detail");
+        linkDetail.attr("id", jobs[j].id);
         linkDetail.text("Detail-Link");
         // append each element together
         favoriteCard.append(favoriteBody);
         favoriteBody.append(companyTitle, companyAddress, linkDetail);
         //append each card to the favorite div
         favoriteDiv.append(favoriteCard);
+
+        // ==========
+        saveIDlocally();
       }
     }
   }
-
-  // for (var i = 0; i < jobs.length; i++) {
-  //   if (favoriteCompanyID == jobs[i].id) {
-  //     var favoriteCard = $("<div>").addClass("card save-card");
-  //     var favoriteBody = $("<div>").addClass("card-body");
-  //     var companyTitle = $("<h5>").addClass("card-title");
-  //     companyTitle.text(jobs[i].company + " ⭐️");
-  //     var companyAddress = $("<p>").addClass("card-text");
-  //     companyAddress.text(jobs[i].location);
-  //     var linkDetail = $("<a>")
-  //       .attr("href", "./homes.html")
-  //       .addClass("btn btn-primary");
-  //     linkDetail.text("Detail-Link");
-  //     // append each element together
-  //     favoriteCard.append(favoriteBody);
-  //     favoriteBody.append(companyTitle, companyAddress, linkDetail);
-  //     //append each card to the favorite div
-  //     favoriteDiv.append(favoriteCard);
-  //   }
-  // }
 }
 retrievedFavorite();
+
+//========================================================
+//save each id in local storage for home page see detail
+function saveIDlocally() {
+  var detailBtnEl = $(".see-detail");
+  detailBtnEl.each(function () {
+    $(this).on("click", function () {
+      var companyID = Number($(this).attr("id"));
+      //console.log(companyID);
+      localStorage.setItem("id", companyID);
+    });
+  });
+}
