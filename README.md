@@ -12,7 +12,7 @@ The code and all relevant files can be found at [https://github.com/parkersatter
 ## Usage
 
 
-![screenshot-demo](./assets/images/index.gif "Functional Demo")
+![screenshot-demo](./assets/images/index.gif)
 
 
 ## Features
