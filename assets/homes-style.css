@@ -1,18 +1,45 @@
-
-
-body {
-    background-image: linear-gradient(to left, rgb(158, 210, 228), rgb(222, 228, 228));
-}
-
 .card-custom {
-    margin: auto;
+    margin: 10px;
 }
 
 .custom-nav {
-    background-color: green;
+    background-color: #207b0e;
     padding-left:25px;
 }
 
 .head-custom {
     padding: 10px;
+    border-bottom: solid #207b0e;
+    background-color: #7ab4dc;
+}
+
+body {
+    background-color: #205072;
+}
+
+.businessImage {
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}
+
+.card .card-content {
+    margin: 0px;
+    background-color: #7ab4dc;
+}
+
+.container-custom {
+    width: 90%;
+}
+
+.row-custom {
+    justify-content: center;
+}
+
+h5 {
+    width: fit-content;
+}
+
+.icon-custom {
+    background-color:#207b0e
 }
