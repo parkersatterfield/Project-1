@@ -3,13 +3,18 @@
 }
 
 .custom-nav {
-    background-color: #67a030;
+    background-color: #207b0e;
     padding-left:25px;
 }
 
 .head-custom {
     padding: 10px;
-    border-bottom: solid #67a030;
+    border-bottom: solid #207b0e;
+    background-color: #7ab4dc;
+}
+
+body {
+    background-color: #205072;
 }
 
 .businessImage {
@@ -20,6 +25,7 @@
 
 .card .card-content {
     margin: 0px;
+    background-color: #7ab4dc;
 }
 
 .container-custom {
@@ -35,5 +41,5 @@ h5 {
 }
 
 .icon-custom {
-    background-color:#67a030
+    background-color:#207b0e
 }
