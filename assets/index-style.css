@@ -1,11 +1,29 @@
 :root {
   --white: #fff;
+  --green: #77a464;
+  --wc-blue: #2ea2cc;
+  --navy: #205072;
+
   --green: #67a030;
+  --leafygreen: #77a464;
+  --forestGreen: #28803a;
+  --solidgreen: #207b0e;
+
+  --skyblu: #7ab4dc;
+  --navy: #205072;
+  --wc-blue: #2ea2cc;
+  
+  --import1 : #205072; /*just noticed import1 matches navy*/
+  --import2 : #329D9C;
+  --import3 : #56C596;
+  --import4 : #7BE495;
+  --import5 : #CFF4D2;
+
 }
 
 header {
   height: 300px;
-  background-color: var(--green);
+  background-color: var(--solidgreen);
   margin-bottom: 20px;
 }
 
@@ -30,13 +48,19 @@ h2 {
   text-align: center;
 }
 
+body {
+  background-color:var(--navy);
+}
+
 .save-card {
   margin-bottom: 15px;
+  background-color: var(--skyblu) ;
 }
 
 .list-card {
   margin: 0 10px 10px 10px;
   width: 300px;
+  background-color: var(--skyblu) ;
 }
 
 .favorite-div {

@@ -658,8 +658,13 @@ function addToFavorite() {
     oldData.push(localStorage.getItem("favoriteList"));
     oldData.push(favoritesID);
     localStorage.setItem("favoriteList", oldData);
-  });
+
+    if (oldData.includes(jobID)) {
+      jobTitleEl.text(jobs[index].title + '⭐');
+    };
+  })
 }
+
 addToFavorite();
 
 //=========================================
