@@ -24,7 +24,6 @@ The code and all relevant files can be found at [https://github.com/parkersatter
 - With the use of local storage, you have the ability to click the Add To Favorites button to store your favorite jobs on the home page.
 
 
-
 ## Contributing
 Group Project 1 for GATech Coding Bootcamp
 
@@ -33,3 +32,8 @@ Group Members :
 - Justin Odom
 - Ludude Lubin
 - Parker Satterfield
+## Presentation Link
+
+[Project Presentation](https://docs.google.com/presentation/d/1QzzNPKGhX9DbBj2tTMR1yCrg8xYZctgxi7dPpZq3Shg/edit?usp=sharing)
+
+
