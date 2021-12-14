@@ -1,20 +1,32 @@
+:root {
+    --white: #fff;
+    --dark: #082032;
+    --blue1: #2C394B;
+    --blue2: #334756;
+    --orange: #FF4C29;
+}
+
 .card-custom {
     margin: 10px;
 }
 
+h4, h5, h6, h7, p {
+    color: white;
+}
+
 .custom-nav {
-    background-color: #207b0e;
+    background-color: var(--blue2);
     padding-left:25px;
 }
 
 .head-custom {
     padding: 10px;
-    border-bottom: solid #207b0e;
-    background-color: #7ab4dc;
+    border-bottom: none;
+    background-color: var(--blue2);
 }
 
 body {
-    background-color: #205072;
+    background-color: var(--dark);
 }
 
 .businessImage {
@@ -25,21 +37,42 @@ body {
 
 .card .card-content {
     margin: 0px;
-    background-color: #7ab4dc;
+    background-color: var(--blue2);
 }
 
 .container-custom {
     width: 90%;
 }
 
-.row-custom {
+.row {
     justify-content: center;
+    align-items: center;
+    padding-top: 10px;
 }
 
-h5 {
-    width: fit-content;
+select {
+    display: flex;
+    align-items: center;
 }
 
 .icon-custom {
-    background-color:#207b0e
+    background-color: var(--orange);
+    transition: 0.3s ease-in-out;
+}
+
+.icon-custom:hover {
+    background-color: #a5311a;
+}
+
+.btn {
+    background-color: var(--orange);
+    box-shadow: none;
+}
+
+.btn:hover {
+  background-color: #a5311a;
+}
+
+h5 {
+    margin: 0;
 }

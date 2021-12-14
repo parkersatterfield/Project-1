@@ -607,16 +607,14 @@ function retrievedFavorite() {
   // favoriteCompanyID is a string, so convert it to array and remove the first empty value
   var favoriteCompanyList = favoriteCompanyID.split(",");
   favoriteCompanyList.shift();
-  console.log(favoriteCompanyList);
+  // console.log(favoriteCompanyList);
 
   var favoriteDiv = $(".favorite-div");
   for (var i = 0; i < favoriteCompanyList.length; i++) {
     for (var j = 0; j < jobs.length; j++) {
       if (favoriteCompanyList[i] == jobs[j].id) {
-        var favoriteCard = $("<div>").addClass(
-          "card save-card favorite-company"
-        );
-        var favoriteBody = $("<div>").addClass("card-body");
+        var favoriteCard = $("<div>");
+        var favoriteBody = $("<div>").addClass("favorite-body");
         var companyTitle = $("<h5>").addClass("card-title");
         companyTitle.text(jobs[j].company + " ⭐️");
         var companyAddress = $("<p>").addClass("card-text");
@@ -625,7 +623,7 @@ function retrievedFavorite() {
           .attr("href", "./homes.html")
           .addClass("btn btn-primary see-detail");
         linkDetail.attr("id", jobs[j].id);
-        linkDetail.text("Detail-Link");
+        linkDetail.text("See Detail");
         // append each element together
         favoriteCard.append(favoriteBody);
         favoriteBody.append(companyTitle, companyAddress, linkDetail);
@@ -652,3 +650,22 @@ function saveIDlocally() {
     });
   });
 }
+
+//========================================================
+// handle favorites menu collapse
+const favMenu = document.getElementById("favMenu");
+const favHeader = document.getElementById("favHeader");
+
+const toggleOpen = () => {
+  if (favMenu.style.display === "flex") {
+    favMenu.style.display = "none";
+    favMenu.style.maxHeight = null;
+    favHeader.innerText="+";
+  } else {
+    favMenu.style.display = "flex";
+    favMenu.style.maxHeight = favMenu.scrollHeight + "px";
+    favHeader.innerText="-";
+  }
+}
+
+favHeader.addEventListener("click", toggleOpen)
